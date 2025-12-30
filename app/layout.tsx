@@ -10,10 +10,47 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Video Editor & Motion Graphics Artist | Professional Portfolio",
+  title: {
+    default: "Pavan | Video Editor & Motion Graphics Designer",
+    template: "%s | Pavan Portfolio",
+  },
   description:
-    "Professional video editing and motion graphics services. Specializing in After Effects, Premiere Pro, and color grading for stunning visual content.",
-  generator: "v0.app",
+    "Professional Video Editor & Motion Graphics Designer specializing in After Effects and Premiere Pro. High-quality edits for YouTube, Instagram, and brands.",
+  keywords: [
+    "Video Editor",
+    "Motion Graphics Designer",
+    "After Effects Editor",
+    "Premiere Pro Editor",
+    "YouTube Video Editing",
+    "Freelance Video Editor",
+  ],
+  authors: [{ name: "Pavan" }],
+  creator: "Pavan",
+  metadataBase: new URL("https://pavanprotfolio.com"),
+  openGraph: {
+    title: "Pavan | Video Editor & Motion Graphics Designer",
+    description:
+      "Professional video editing and motion graphics services for creators and brands.",
+    url: "https://pavanprotfolio.com",
+    siteName: "Pavan Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Pavan Video Editor Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pavan | Video Editor",
+    description:
+      "Professional Video Editor & Motion Graphics Designer.",
+    images: ["/og-image.png"],
+  },
   icons: {
     icon: [
       {
@@ -35,11 +72,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
+      <head>
+        {/* 🔐 Google Search Console verification (ADD WHEN YOU GET IT) */}
+        {/* 
+        <meta
+          name="google-site-verification"
+          content="PASTE_YOUR_CODE_HERE"
+        />
+        */}
+      </head>
       <body className={`${inter.className} font-sans antialiased`}>
         {children}
         <Analytics />
